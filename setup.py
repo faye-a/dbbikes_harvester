@@ -1,10 +1,13 @@
 from setuptools import setup
 
 setup(
-    name='dublinbikesapp',
+    name='dbbikes',
     version='1.1.1',
     author='fayea',
     author_email='faye.arejola98@gmail.com',
     install_requires=['requests','sqlalchemy','mysql-connector-python'],
-    description='DATA scraper for dubilnbikes'
+    description='DATA scraper for dubilnbikes',
+    packages='dbbikes',
+    entry_points={
+        'console_scripts': ['dbbikes=dbbikes.main:main']}
 )
