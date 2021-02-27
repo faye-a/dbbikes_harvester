@@ -25,6 +25,7 @@ def main_dynamic():
             time.sleep(10 * 60)
         except:
             print(traceback.format_exc())
+    return
 
 
 def get_stations_dynamic(object):
@@ -44,7 +45,7 @@ db = "dublinbikesapp"
 #creates table for dynamic data
 meta2 = MetaData()
 stations_dynamic = Table('availability', meta2,
-Column('station_num', Integer, primary_key = True),
+Column('station_num', Integer),
 Column('avail_stands', Integer),
 Column('avail_bikes', Integer),
 Column('status', String(40)),
@@ -78,6 +79,7 @@ def store_dynamic(files):
             engine.execute(insert)
     except:
         print(traceback.format_exc())
+    return
 
 
 main_dynamic()
